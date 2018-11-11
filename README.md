@@ -1,10 +1,20 @@
 # CONFIG SYNC TOOLS
 
-This is my set of scripts I use to sync my settings over devices using private repo.
+This is set of my scripts I use to sync my config files over devices using private repo.
 
-## How it works?
+## Sync Process
 
-TBD
+1. Latest version of encrypted config folders are downloaded using GIT from your private repository
+
+2. Folders are decrypted (if you have access key for it)
+
+3. Your config will be merged with decrypted config files
+
+4. Changed config folders are encrypted and pushed to your private repository
+
+## How-Tos
+
+* [How to Set-Up Sync for Keepass](docs/keepass.md)
 
 ## Installation
 
@@ -18,4 +28,10 @@ TBD
 
 This command downloads and executes [this script](create-new-repo.ps1). If you want, you can download and inspect and run it manually.
 
-3. Execute command `config-sync-tools\create-new-item.cmd` to crete new config item folder with random password.
+3. Execute command `config-sync-tools\create-new-item.cmd` to crete new config folders with random passwords for each of it.
+
+4. Clone your private repository to your other devices.
+
+5. Copy `.key` files from `local` folder (which is ignored from GIT) to your other devices to give access to specific config folders.
+
+6. Follow how-tos articles to set-up synchronization.
