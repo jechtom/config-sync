@@ -9,7 +9,7 @@ try
     if(-not (test-path .git)) { git init }
 
     # gitignore file
-    "/local/*`r`n!/local/.gitkeep" > .gitignore
+    "/local/*`r`n!/local/.gitkeep" | Set-Content -Encoding ascii -path .gitignore
     
     # basic folder structure
     mkdir .\local
