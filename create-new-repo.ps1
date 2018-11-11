@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop";
 $path = $PSScriptRoot
-Write-Host "Creating config sync repo in $path"
+Write-Host "Creating config sync repo in $pwd"
 
-pushd $path
+pushd $pwd
 try
 {
     #git init
