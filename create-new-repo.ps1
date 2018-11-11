@@ -19,6 +19,10 @@ try
 
     # get tools in nested dir
     git submodule add https://github.com/jechtom/config-sync-tools.git config-sync-tools
+
+    # commit
+    git add -A
+    git commit -m "Added config sync tools (via script)"
 }
 finally
 {
