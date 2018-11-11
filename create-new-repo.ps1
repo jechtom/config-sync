@@ -18,7 +18,7 @@ try
     new-item .\data-encrypted\.gitkeep -itemtype file
 
     # get tools in nested dir
-    git clone https://github.com/jechtom/config-sync-tools.git
+    git submodule add https://github.com/jechtom/config-sync-tools.git config-sync-tools
 }
 finally
 {
