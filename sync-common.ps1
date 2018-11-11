@@ -53,6 +53,12 @@ function Get-FolderHash([string]$path) {
     return $folderHash
 }
 
+function Get-RandomPassword([int]$chars)
+{
+    # not sure if this is secure enough
+    return [System.Web.Security.Membership]::GeneratePassword($chars,0)
+}
+
 # require 7zip
 if (-not (test-path "$env:ProgramFiles\7-Zip\7z.exe")) {throw "$env:ProgramFiles\7-Zip\7z.exe needed"} 
 Set-Alias sz "$env:ProgramFiles\7-Zip\7z.exe" 
