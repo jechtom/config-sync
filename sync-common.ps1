@@ -55,8 +55,13 @@ function Get-FolderHash([string]$path) {
 
 function Get-RandomPassword([int]$chars)
 {
-    # not sure if this is secure enough
-    return [System.Web.Security.Membership]::GeneratePassword($chars,0)
+    Begin {   
+        Add-Type -AssemblyName System.Web 
+    }
+    Process {
+        # not sure if this is secure enough
+        return [System.Web.Security.Membership]::GeneratePassword($chars,0)
+    }
 }
 
 # require 7zip
