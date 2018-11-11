@@ -9,7 +9,7 @@ try
     if(-not (test-path .git)) { git init }
 
     # gitignore file
-    "/local/*`r`n!/local/.gitkeep" | Set-Content -Encoding ascii -path .gitignore
+    "/local/*`r`n!/local/.gitkeep" > .gitignore
     
     # basic folder structure
     mkdir .\local
@@ -22,7 +22,7 @@ try
 
     # commit
     git add -A
-    git commit -m "Added config sync tools (via script)"
+    git commit -m "Added config sync tools ( via script)"
 }
 finally
 {

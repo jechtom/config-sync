@@ -8,8 +8,8 @@ $directories = Get-ChildItem -Directory $localDataPath
 
 # calculate hashes
 $needToCommit = $false
-$directories | %{ 
-
+$directories | %{
+    
     $path = $_.FullName
     $name = $_.Name
 
@@ -21,7 +21,7 @@ $directories | %{
     $encryptionKey = (get-content $encryptionKeyFile)
 
     # calculate hash
-    $newHash = Get-FolderHash($path)
+    $newHash = Get-FolderHash $path
     Write-Host "Hash of folder $path is $newHash"
 
     $repoHashFile = Join-Path $encryptedDataPath "$name.hash"

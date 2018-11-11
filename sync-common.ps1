@@ -9,7 +9,7 @@ $localDataPath = join-path $PSScriptRoot $localDataFolderName
 
 # functions
 
-function Get-StringHashSHA256([Parameter(Mandatory=$true)][string]$str) {
+function Get-StringHashSHA256([string]$str) {
     $inputBytes = [System.Text.Encoding]::UTF8.GetBytes($str)
     $hashAlg = new-object System.Security.Cryptography.SHA256Managed 
     $hash = $hashAlg.ComputeHash($inputBytes)
